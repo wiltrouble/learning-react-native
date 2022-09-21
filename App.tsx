@@ -1,18 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import CounterScreen from './src/screens/CounterScreen';
+import { SafeAreaView, StyleSheet } from "react-native";
+import BoxObjectModelScreen from "./src/screens/BoxObjectModelScreen3";
+import CounterScreen from "./src/screens/CounterScreen";
 
 export default function App() {
   return (
-    <CounterScreen />
+    <SafeAreaView style={styles.container}>
+      <BoxObjectModelScreen />
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#28425b",
   },
 });
