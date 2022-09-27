@@ -1,20 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, StatusBar } from 'react-native'
+import React from 'react'
+import CalculatorScreen from './src/screens/CalculatorScreen'
+import globalStyle from "./src/theme/appTheme";
 
-export default function App() {
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <SafeAreaView style={globalStyle.background}>
+      <StatusBar backgroundColor='black' barStyle='light-content'/>
+      <CalculatorScreen />
+    </SafeAreaView>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App
