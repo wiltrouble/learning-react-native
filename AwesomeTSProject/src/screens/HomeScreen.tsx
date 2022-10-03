@@ -1,4 +1,4 @@
-import {ActivityIndicator, Button, StyleSheet, Text, View} from 'react-native';
+import {ActivityIndicator, Button, Dimensions, StyleSheet, Text, View} from 'react-native';
 import React, {useEffect} from 'react';
 
 import {useMovies} from '../hooks/useMovies';
@@ -9,6 +9,7 @@ import MovieCarousel from '../components/carousel';
 const HomeScreen = () => {
   const {moviesOnCine, isLoading} = useMovies();
  const { top } = useSafeAreaInsets();
+ const width = Dimensions.get('window').width;
 
   if (isLoading) {
     return (
@@ -19,13 +20,17 @@ const HomeScreen = () => {
   }
 
   return (
-    <View style={{ marginTop: top + 20}}>
-      {/* <MoviePoster movie={ moviesOnCine[0]}/> */}
-      <MovieCarousel />
+    <View style={{ marginTop: top + 20, }}>
+      <MovieCarousel movies={moviesOnCine}/>
     </View>
   )
 };
 
 export default HomeScreen;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    
+    
+  }
+});

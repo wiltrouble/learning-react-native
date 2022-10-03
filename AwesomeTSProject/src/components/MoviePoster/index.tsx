@@ -23,8 +23,8 @@ export default MoviePoster;
 
 const styles = StyleSheet.create({
   container: {
-    width: 200,
-    height: 400,
+    width: 400,
+    height: 600,
   },
   image: {
     flex: 1,
