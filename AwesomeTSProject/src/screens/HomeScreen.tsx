@@ -1,24 +1,19 @@
 import {
   ActivityIndicator,
-  Button,
-  Dimensions,
-  FlatList,
   StyleSheet,
-  Text,
   View,
 } from 'react-native';
-import React, {useEffect} from 'react';
+import React from 'react';
 
 import {useMovies} from '../hooks/useMovies';
-import MoviePoster from '../components/moviePoster';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import MovieCarousel from '../components/carousel';
 import {ScrollView} from 'react-native-gesture-handler';
+import HorizontalSlider from '../components/HorizontalSlider';
 
 const HomeScreen = () => {
-  const {moviesOnCine, isLoading} = useMovies();
+  const {nowPlaying, popular, topRated, upcoming, isLoading} = useMovies();
   const {top} = useSafeAreaInsets();
-  const width = Dimensions.get('window').width;
 
   if (isLoading) {
     return (
@@ -31,22 +26,11 @@ const HomeScreen = () => {
   return (
     <ScrollView>
       <View style={{marginTop: top}}>
-        <View>
-          <MovieCarousel movies={moviesOnCine} />
-        </View>
+          <MovieCarousel movies={nowPlaying} />
 
-        <View style={{backgroundColor: 'red', height: 250}}>
-          <Text style={{fontSize: 30, fontWeight: 'bold'}}>En cine</Text>
-          <FlatList
-            data={moviesOnCine}
-            renderItem={({item}): any => (
-              <MoviePoster movie={item} height={200} width={140} />
-            )}
-            keyExtractor={item => item.id.toString()}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-          />
-        </View>
+          <HorizontalSlider movies={popular} title="Popular"/>
+          <HorizontalSlider movies={topRated} title="Top"/>
+          <HorizontalSlider movies={upcoming} title="Upcomming"/>
       </View>
     </ScrollView>
   );

@@ -12,7 +12,7 @@ const MoviePoster = ({movie, height = 490, width = 390}: Props) => {
   const url = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
   return (
-    <View style={{width, height, marginHorizontal: 5}}>
+    <View style={{width, height, marginHorizontal: 5, marginVertical: 8}}>
       <View style={styles.imageContainer}>
       <Image style={styles.image} source={{uri: url}} />
 
