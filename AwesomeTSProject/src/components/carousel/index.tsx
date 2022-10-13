@@ -10,13 +10,15 @@ interface Props {
 }
 
 const MovieCarousel = ({movies}: Props) => {
-  const width = Dimensions.get('window').width;
+  const {width, height} = Dimensions.get('window');
+  console.log(width);
+  
   return (
       <Carousel
         mode='parallax'
         loop
         width={width}
-        height={600}
+        height={500}
         autoPlay={true}
         data={movies}
         scrollAnimationDuration={1000}
