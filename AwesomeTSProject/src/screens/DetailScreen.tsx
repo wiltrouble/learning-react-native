@@ -5,6 +5,7 @@ import {
   Image,
   Dimensions,
   ActivityIndicator,
+  TouchableOpacity,
 } from 'react-native';
 import React from 'react';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
@@ -13,13 +14,14 @@ import {RootStackParams} from '../navigation/StackNavigator';
 import {ScrollView} from 'react-native-gesture-handler';
 import useMovieDetails from '../hooks/useMovieDetails';
 import MovieDetailsComponent from '../components/movieDetails';
+import {ArrowLeftIcon, BackwardIcon} from 'react-native-heroicons/outline';
 
 const height = Dimensions.get('screen').height;
 
 interface Props
   extends NativeStackScreenProps<RootStackParams, 'DetailsScreen'> {}
 
-const DetailScreen = ({route}: Props) => {
+const DetailScreen = ({route, navigation}: Props) => {
   const movie = route.params;
   const uri = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
@@ -38,7 +40,15 @@ const DetailScreen = ({route}: Props) => {
         <Text style={styles.subtitle}>{movie.title}</Text>
       </View>
 
-      {isLoading ? <ActivityIndicator /> : <MovieDetailsComponent movieFull={movieFull!} cast={cast} />}
+      {isLoading ? (
+        <ActivityIndicator />
+      ) : (
+        <MovieDetailsComponent movieFull={movieFull!} cast={cast} />
+      )}
+
+      <TouchableOpacity style={styles.backButton} onPress={() => navigation.pop()}>
+        <ArrowLeftIcon size={40} color="white" />
+      </TouchableOpacity>
     </ScrollView>
   );
 };
@@ -47,7 +57,6 @@ export default DetailScreen;
 
 const styles = StyleSheet.create({
   imageContainer: {
-    // backgroundColor: 'red',
     width: '100%',
     height: height * 0.7,
     shadowColor: '#000',
@@ -76,5 +85,10 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     borderBottomEndRadius: 25,
     borderBottomStartRadius: 25,
+  },
+  backButton: {
+    position: 'absolute',
+    top: 30,
+    left: 10,
   },
 });
