@@ -16,7 +16,7 @@ const MoviePoster = ({movie, height = 490, width = 390}: Props) => {
   const navigation = useNavigation();
 
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('DetailScreen', movie)} activeOpacity={0.8} style={{width, height, marginHorizontal: 5, marginVertical: 8}}>
+    <TouchableOpacity onPress={() => navigation.navigate('DetailsScreen', movie)} activeOpacity={0.8} style={{width, height, marginHorizontal: 5, marginVertical: 8}}>
       <View style={styles.imageContainer}>
         <Image style={styles.image} source={{uri: url}} />
       </View>

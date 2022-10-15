@@ -17,11 +17,11 @@ function StackNavigator() {
       <Stack.Navigator screenOptions={{
         headerShown: false,
         contentStyle: {
-          backgroundColor: 'white'
+          // backgroundColor: 'white'
         }
       }}>
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
-        <Stack.Screen name="DetailScreen" component={DetailScreen} />
+        <Stack.Screen name="DetailsScreen" component={DetailScreen} />
       </Stack.Navigator>
   );
 }
