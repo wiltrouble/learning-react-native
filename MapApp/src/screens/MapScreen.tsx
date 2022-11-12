@@ -1,12 +1,13 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import MapView from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 
 const MapScreen = () => {
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1, ...StyleSheet.absoluteFillObject}}>
       <MapView
-        style={{flex: 1}}
+        style={{flex: 1, ...StyleSheet.absoluteFillObject}}
+        // provider={ PROVIDER_GOOGLE }
         initialRegion={{
           latitude: -17.4018936,
           longitude: -66.0377982,
