@@ -12,5 +12,9 @@ export const menuItems: MenuItem[] = [
   {
     name: 'switch',
     component: 'SwitchScreen',
+  },
+  {
+    name: 'alert',
+    component: 'AlertScreen',
   }
 ];
