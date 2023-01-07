@@ -20,5 +20,13 @@ export const menuItems: MenuItem[] = [
   {
     name: 'text inputs',
     component: 'TextInputScreen',
+  },
+  {
+    name: 'pull to refresh',
+    component: 'PullToRefreshScreen'
+  },
+  {
+    name: 'section list',
+    component: 'SectionListScreen'
   }
 ];
