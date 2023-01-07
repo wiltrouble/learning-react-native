@@ -16,5 +16,9 @@ export const menuItems: MenuItem[] = [
   {
     name: 'alert',
     component: 'AlertScreen',
+  },
+  {
+    name: 'text inputs',
+    component: 'TextInputScreen',
   }
 ];
