@@ -28,5 +28,9 @@ export const menuItems: MenuItem[] = [
   {
     name: 'section list',
     component: 'SectionListScreen'
+  },
+  {
+    name: 'Modal Screen',
+    component: 'ModalScreen'
   }
 ];
