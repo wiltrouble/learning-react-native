@@ -36,5 +36,9 @@ export const menuItems: MenuItem[] = [
   {
     name: 'Infinite scroll',
     component: 'InfiniteScrollScreen'
+  },
+  {
+    name: 'SlidesScreen',
+    component: 'SlidesScreen'
   }
 ];
