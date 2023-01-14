@@ -19,7 +19,7 @@ const Navigator = () => {
   return (
     <Stack.Navigator 
       screenOptions={{
-        headerShown: false
+        // headerShown: false
       }}>
       <Stack.Screen name='HomeScreen' component={HomeScreen}/>
       <Stack.Screen name="Animation01Screen" component={Animation01Screen} />
