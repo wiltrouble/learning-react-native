@@ -29,5 +29,3 @@ const PullToRefreshScreen = () => {
 };
 
 export default PullToRefreshScreen;
-
-const styles2 = StyleSheet.create({});

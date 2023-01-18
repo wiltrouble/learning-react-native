@@ -40,5 +40,9 @@ export const menuItems: MenuItem[] = [
   {
     name: 'SlidesScreen',
     component: 'SlidesScreen'
+  },
+  {
+    name: 'Change Theme Screen',
+    component: 'ChangeThemeScreen'
   }
 ];
